@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow specific directories or pages if needed
+# Disallow: /private/
+# Disallow: /example-page/
+
+Sitemap: https://starlake.ai/sitemap.xml

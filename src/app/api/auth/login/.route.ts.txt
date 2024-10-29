@@ -1,0 +1,107 @@
+import { NextResponse } from "next/server";
+import { Connector, IpAddressTypes } from "@google-cloud/cloud-sql-connector";
+import { Pool } from "pg";
+import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
+
+const JWT_SECRET = process.env.COOKIE_SECRET!;
+const DB_HOST = process.env.DB_HOST!;
+const DB_USER = process.env.DB_USER!;
+const DB_PASSWORD = process.env.DB_PASSWORD!;
+const DB_NAME = process.env.DB_NAME!;
+
+if (!JWT_SECRET) {
+  throw new Error("Missing JWT_SECRET environment variable");
+}
+if (!DB_HOST || !DB_USER || !DB_PASSWORD || !DB_NAME) {
+  throw new Error("Missing one or more database environment variables");
+}
+
+const generateToken = (payload: object): string => {
+  return jwt.sign(payload, JWT_SECRET, { expiresIn: "24h" });
+};
+
+const connector = new Connector();
+const poolPromise = (async () => {
+  const clientOpts = await connector.getOptions({
+    instanceConnectionName: DB_HOST,
+    ipType: IpAddressTypes.PUBLIC,
+  });
+
+  return new Pool({
+    ...clientOpts,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_NAME,
+    max: 5,
+  });
+})();
+
+export async function POST(req: Request) {
+  try {
+    const { email, password }: { email: string; password: string } =
+      await req.json();
+
+    if (!email || !password) {
+      return NextResponse.json(
+        { error: "Missing email or password" },
+        { status: 400 }
+      );
+    }
+
+    const pool = await poolPromise;
+
+    const queryText =
+      "SELECT * FROM website.whitelist WHERE email = $1 AND password = $2";
+    const { rows } = await pool.query(queryText, [email, password]);
+
+    if (rows.length > 0) {
+      const token = generateToken({ user: { email } });
+
+      const addLoginQuery = `
+        INSERT INTO website.logins (email, dat, extra) 
+        VALUES ($1, $2, $3) 
+        RETURNING *;
+      `;
+      await pool.query(addLoginQuery, [
+        email,
+        new Date(),
+        JSON.stringify({
+          agent: req.headers.get("user-agent"),
+          referrer: req.headers.get("referrer") || "",
+        }),
+      ]);
+
+      const response = NextResponse.json({ login: true });
+      cookies().set("token", token, {
+        maxAge: 24 * 60 * 60,
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+      });
+
+      return response;
+    }
+
+    return NextResponse.json(
+      { login: false, error: "Invalid credentials" },
+      { status: 401 }
+    );
+  } catch (error) {
+    console.error("Authentication error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
+
+process.on("exit", async () => {
+  try {
+    const pool = await poolPromise;
+    await pool.end();
+    connector.close();
+  } catch (error) {
+    console.error("Error closing database connection:", error);
+  }
+});

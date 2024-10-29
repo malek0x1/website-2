@@ -1,0 +1,392 @@
+{
+  "homePage": {
+    "heroSection": {
+      "title": "Deliver high-quality data with\n",
+      "subtitle": "Discover how the Starlake® contract-based ingestion and transformation framework accelerates data pipelines delivery",
+      "image": {
+        "src": "/images/flow.webp",
+        "alt": "Dashboard Preview",
+        "videoId": "dQw4w9WgXcQ"
+      },
+      "buttons": [
+        {
+          "text": "Try Now",
+          "variant": "primary",
+          "style": {
+            "width": "150px",
+            "marginTop": "10px"
+          }
+        },
+        {
+          "text": "Learn More",
+          "variant": "outline-primary",
+          "style": {
+            "marginLeft": "10px",
+            "width": "150px",
+            "marginTop": "10px"
+          }
+        }
+      ]
+    },
+    "cardSection": {
+      "text": "Features",
+      "title": "Focus more on business value, less on pipelines",
+      "subtitle": "",
+      "card": [
+        {
+          "src": "/images/cards/ingestion.svg",
+          "title": "No code Ingestion",
+          "description": "Through declarative configuration, data is validated, transformed and loaded into your data warehouse without writing a single line of code.",
+          "alt": ""
+        },
+        {
+          "src": "/images/cards/transform.svg",
+          "title": "Low code Transformations",
+          "description": "Declare the datasets you need and the transformations you want to apply, the write strategy and the rules you want to enforce, and let Starlake do the rest.",
+          "alt": ""
+        },
+        {
+          "src": "/images/cards/airflow1.svg",
+          "title": "Automated Workflows",
+          "description": "Let Starlake infer your task dependencies and apply predefined and custom Airflow® or Dagster® templates to automate your workflows.",
+          "alt": ""
+        }
+      ]
+    },
+    "benefitsSection": {
+      "text": "Benefits",
+      "title": "The Starlake Ingestion & Transform Platform",
+      "subTitle": "When schema is enforced at the data ingestion stage, the transformation logic is governed by the rules specified in the contracts, your metrics tracked and aligned with the SLAs specified in the contracts, your pipelines automated and tested, you deliver value faster and cheaper.",
+      "benefits": [
+        {
+          "tab": "Deliver pipelines faster",
+          "title": "Code less, deliver more",
+          "subtitle": "Declare the ingestion and transformation outcomes and let Starlake and your data warehouse take care of the underlying logic. Use our declarative YAML syntax or browser based UI to build and maintain more efficiently your data warehouse.",
+          "imageUrl": "/images/benefits/pipelines.webp",
+          "features": [
+            "Don't code, declare your intent using YAML or our browser based UI",
+            "Infer dependencies and automate workflows",
+            "Reuse orchestration templates among tasks and projects"
+          ]
+        },
+        {
+          "tab": "Reduce costs",
+          "title": "Apply Software Engineering practices to Data Engineering",
+          "subtitle": "Develop and test your workload locally and deploy globally. Thanks to our state of the art SQL Transpiler, use your native SQL dialect both on your test and production environments. Support BigQuery/Databricks/Snowflake/Redshift/DuckDB and more",
+          "imageUrl": "/images/benefits/costs.webp",
+          "features": [
+            "Test your load and transformation logic locally or on your C.I. before deploying",
+            "Validate your pipelines on small amount of data before running them on the full dataset",
+            "Reuse orchestration templates among tasks and projects"
+          ]
+        },
+        {
+          "tab": "Cover the entire Data Lifecycle",
+          "title": "Data Engineering / Analytics is not about Load or Transform or Orchestration, it's about all of them !",
+          "subtitle": "Starlake covers the entire data lifecycle, from data ingestion to data monitoring, including data validation, transformation and orchestration.",
+          "imageUrl": "/images/benefits/elto.webp",
+          "features": [
+            "Extract from source database or middleware in full or incremental mode",
+            "Infer schema and data types from your inputs and load them into your data warehouse",
+            "Apply transformations using SQL SELECT statements and materialize using declarative write strategies (append, overwrite, upsert by key and/or timestamp, slow changing dimension, etc.)"
+          ]
+        },
+        {
+          "tab": "Data Governance",
+          "title": "Enforce data governance with starlake data contracts",
+          "subtitle": "Keep your lakehouse from becoming a dataswamp using automated testing, schema enforcement, validation and  transformation rules, ensuring data integrity and consistency across all stages",
+          "imageUrl": "/images/benefits/governance.webp",
+          "features": [
+            "Schema enforcement ensuring data consistency",
+            "Transformation logic governed by rules",
+            "Comprehensive documentation of all contracts",
+            "Data availability, freshness and quality tracked and aligned with SLAs"
+          ]
+        },
+        {
+          "tab": "SLAs & Monitoring",
+          "title": "Commitments on data availability and freshness",
+          "subtitle": "Tracking Service Level Agreements (SLAs) is crucial for ensuring that data services meet the expected standards of quality, availability, and performance as agreed upon between data producers and consumers.",
+          "imageUrl": "/images/benefits/monitoring.webp",
+          "features": [
+            "Clear availability, freshness, accuracy and completeness metrics",
+            "Real time monitoring, logging and auditing",
+            "Historical analysis to identify recurring issues"
+          ]
+        },
+        {
+          "tab": "OnPremise and SaaS",
+          "title": "Single codebase, multiple deployment options",
+          "subtitle": "Deploy Starlake on your own on-premise or serverless cloud infrastructure. When you want to focus on your business, use our SaaS offering.",
+          "imageUrl": "/images/benefits/serverless.webp",
+          "features": [
+            "Run Starlake as a serverless SaaS offering",
+            "Run Starlake as a Docker image on your own infrastructure",
+            "Ultra light footprint, no need for a dedicated cluster or database server"
+          ]
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "text": "Testimonials",
+      "title": "",
+      "subTitle": "lorem ipsum dolor sit amet lorem ipsum dolor",
+      "testimonials": [
+        {
+          "src": "/images/cards/card2.svg",
+          "name": "John Doe",
+          "role": "CEO at Company",
+          "image": "https://via.placeholder.com/100",
+          "quote": "The best ETL solution we have ever used."
+        },
+        {
+          "src": "/images/cards/card2.svg",
+          "name": "Jane Smith",
+          "role": "CTO at Startup",
+          "image": "https://via.placeholder.com/100",
+          "quote": "The best ETL solution we have ever used."
+        },
+        {
+          "src": "/images/cards/card2.svg",
+          "name": "Mike Johnson",
+          "role": "Data Engineer at Tech Corp",
+          "image": "https://via.placeholder.com/100",
+          "quote": "It made data ingestion so much easier."
+        }
+      ]
+    },
+
+    "stepperSection": {
+      "text": "How it works",
+      "title": "",
+      "subTitle": "Experience the power of the all in one user friendly UI and declarative YAML",
+      "content": [
+        {
+          "stepName": "Load",
+          "title": "Load and validate your data before it is too late",
+          "subtitle": "",
+          "imageUrl": "/images/load.png",
+          "videoId": "m490VNeASC0"
+        },
+        {
+          "stepName": "Transform",
+          "title": "Get insights from your data with declarative transformations",
+          "subtitle": "",
+          "imageUrl": "/images/transform.png",
+          "videoId": "B6xEomPtvCY"
+        },
+        {
+          "stepName": "Test",
+          "title": "Unit Test your pipelines before delivering to production",
+          "subtitle": "",
+          "imageUrl": "/images/test.png",
+          "videoId": "Hehp3yezAQ0"
+        }
+      ]
+    },
+    "faqSection": {
+      "text": "",
+      "title": "Frequently Asked Questions",
+      "subTitle": "",
+      "accordion": [
+        {
+          "title": "How does Starlake Cloud compare to dbt Cloud ?",
+          "subTitle": "",
+          "content": [
+            {
+              "text": "In addition to Transformations, Starlake also covers data Extraction and data Loading."
+            },
+            {
+              "text": "No more `jinja ref` macros. Use plain SQL and Starlake Cloud SQL parser will infer the dependencies and apply substitutions if required."
+            },
+            {
+              "text": "In addition to the browser based YAML editor, Starlake Cloud provides a user friendly UI to build and deploy your data pipelines."
+            },
+            {
+              "text": "Starlake Cloud natively generates Airflow DAGs and Dagster pipelines."
+            },
+            {
+              "text": "Not only Starlake Cloud works as a SaaS service, it may also be installed on your laptop, your cloud or your on-premise infrastructure."
+            },
+            {
+              "text": "Starlake Cloud runs your tests in-memory, not on your data warehouse, enabling you to run your unit tests locally and on your C.I. reducing costs and speeding up development."
+            }
+          ]
+        },
+        {
+          "title": "How much does Starlake cost ?",
+          "subTitle": "Starlake Cloud is built on top of the Starlake UI and the Starlake Core Open Source Software project.",
+          "content": [
+            {
+              "text": "Starlake Cloud is free, period.",
+              "color": "#52796f",
+              "weight": "bold"
+            },
+            {
+              "text": "Starlake Cloud subscriptions on starlake.ai is licensed on a per developer basis. The pricing will be per developer per month."
+            },
+            {
+              "text": "Starlake Cloud is always free for all read-only users"
+            }
+          ]
+        },
+        {
+          "title": "What kind of support is available ?",
+          "subTitle": "We provide two levels of support.",
+          "content": [
+            {
+              "text": "Community support is available on our GitHub repository and Slack channel."
+            },
+            {
+              "text": "Enterprise support is available through a subscription model."
+            },
+            {
+              "text": "We also provide training and professional services to help you with your data projects."
+            }
+          ]
+        },
+        {
+          "title": "How much proficient in YAML and Git do I need to be to use Starlake ?",
+          "subTitle": "Even though Starlake is based on YAML and versioning on Git, you don't need to know anything about YAML or Git to use it, thanks to the user friendly Starlake UI.",
+          "content": [
+            {
+              "text": "Although you can use the YAML editor, you can also use the advanced UI that manage the YAML for you."
+            },
+            {
+              "text": "Git is behind the scene, you don't need to know about it to use Starlake."
+            }
+          ]
+        }
+      ]
+    },
+    "cookie": {
+      "text": "This website uses cookies to enhance the user experience.",
+      "btnName": "I understand",
+      "cookieName": "starlakeCookie"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "Starlake.ai",
+      "logo": "https://via.placeholder.com/150x50",
+      "description": ""
+    },
+    "copyright": {
+      "text": "Copyright © 2024",
+      "company": "Starlake.ai",
+      "companyLink": "https://starlake.ai/"
+    }
+  },
+
+  "header": {
+    "slogans": [
+      "Empowering Big Data: Load, Transform, Test with Precision.",
+      "Unlock Insights: Seamlessly Handle and Analyze Big Data.",
+      "Transform Big Data into Big Results."
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "introduction": "Welcome to StarLake AI, a software solution for big data. This privacy policy explains how we collect, use, and protect your information.",
+    "sections": [
+      {
+        "heading": "1. Information We Collect",
+        "content": "We collect information you provide directly to us when you use our services, such as when you create an account or contact us for support."
+      },
+      {
+        "heading": "2. How We Use Your Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, as well as to communicate with you about updates and promotions."
+      },
+      {
+        "heading": "3. Information Sharing",
+        "content": "We do not share your personal information with third parties except as necessary to provide our services or as required by law."
+      },
+      {
+        "heading": "4. Data Security",
+        "content": "We implement a variety of security measures to ensure the safety of your personal information."
+      },
+      {
+        "heading": "5. Your Rights",
+        "content": "You have the right to access, update, or delete your personal information at any time."
+      },
+      {
+        "heading": "6. Contact Us",
+        "content": "If you have any questions about this privacy policy, please contact us at support@starlakeai.com."
+      }
+    ]
+  },
+  "termsAndConditions": {
+    "title": "Terms and conditions",
+    "introduction": "Welcome to StarLake AI, a software solution for big data. This privacy policy explains how we collect, use, and protect your information.",
+    "sections": [
+      {
+        "heading": "1. Information We Collect",
+        "content": "We collect information you provide directly to us when you use our services, such as when you create an account or contact us for support."
+      },
+      {
+        "heading": "2. How We Use Your Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, as well as to communicate with you about updates and promotions."
+      },
+      {
+        "heading": "3. Information Sharing",
+        "content": "We do not share your personal information with third parties except as necessary to provide our services or as required by law."
+      },
+      {
+        "heading": "4. Data Security",
+        "content": "We implement a variety of security measures to ensure the safety of your personal information."
+      },
+      {
+        "heading": "5. Your Rights",
+        "content": "You have the right to access, update, or delete your personal information at any time."
+      },
+      {
+        "heading": "6. Contact Us",
+        "content": "If you have any questions about this privacy policy, please contact us at support@starlakeai.com."
+      }
+    ]
+  },
+  "registerPage": {
+    "title": "Try Starlake Ai free",
+    "titleForm": "Welcome to Starlake Ai",
+    "subTitle": "Test-drive the full Databricks platform free for 14 days on your choice of AWS, Microsoft Azure or Google Cloud. Sign-up with your work email to elevate your trial experience.",
+    "register": [
+      {
+        "features": [
+          {
+            "title": "Create high quality Generative AI applications",
+            "description": "Build production quality generative AI applications and ensure your output is accurate, current, aware of your enterprise context, and safe.."
+          },
+          {
+            "title": "Simplify data ingestion and automate ETL",
+            "description": "Ingest data from hundreds of sources. Use a simple declarative approach to build data pipelines."
+          },
+          {
+            "title": "Get $400 in serverless compute credits to use during your trial",
+            "description": "Access instant, elastic compute during your trial. Please note that serverless compute is not available on Google Cloud Platform or for Databricks Partners."
+          }
+        ]
+      }
+    ],
+    "datawarehouseOptions": [
+      { "value": "BigQuery", "label": "BigQuery" },
+      { "value": "Databricks", "label": "Databricks" },
+      { "value": "DuckDB", "label": "DuckDB" },
+      { "value": "Snowflake", "label": "Snowflake" },
+      { "value": "AWS Redshift", "label": "AWS Redshift" },
+      { "value": "Postgres", "label": "Postgres" },
+      { "value": "Other", "label": "Other" }
+    ],
+    "cloudProviderOptions": [
+      { "value": "AWS", "label": "AWS" },
+      { "value": "Google Cloud", "label": "Google Cloud" },
+      { "value": "Azure", "label": "Azure" },
+      { "value": "Other", "label": "Other" }
+    ],
+    "orchestratorOptions": [
+      { "value": "Airflow", "label": "Airflow" },
+      { "value": "Dagster", "label": "Dagster" },
+      { "value": "Other", "label": "Other" }
+    ],
+    "submitAgree": "By submitting, I agree to the processing of my personal data by Starlake in accordance with our"
+  }
+}

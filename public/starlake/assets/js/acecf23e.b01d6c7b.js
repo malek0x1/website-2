@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstarlake=self.webpackChunkstarlake||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/starlake/blog","blogTitle":"Blog","authorsListPath":"/starlake/blog/authors"}')}}]);

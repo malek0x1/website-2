@@ -1,0 +1,44 @@
+name: Build Check
+ 
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+
+      - name: Check if Fork
+        id: fork-check
+        run: |
+          if [ "${{ github.repository_owner }}" != "${{ github.actor }}" ]; then
+            echo "This is a fork."
+            echo "is_fork=true" >> $GITHUB_ENV
+          else
+            echo "This is not a fork."
+            echo "is_fork=false" >> $GITHUB_ENV
+          fi
+
+      - name: Install Dependencies
+        if: env.is_fork == 'false' || github.event_name == 'pull_request'
+        run: yarn install
+
+      - name: Run Build
+        if: env.is_fork == 'false' || github.event_name == 'pull_request'
+        run: yarn build
