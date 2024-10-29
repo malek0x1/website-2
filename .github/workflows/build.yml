@@ -29,6 +29,8 @@ jobs:
         run: |
           if [ "${{ github.repository_owner }}" != "${{ github.actor }}" ]; then
             echo "This is a fork."
+            echo "event name below"
+            echo github.event_name
             echo "is_fork=true" >> $GITHUB_ENV
           else
             echo "This is not a fork."
@@ -36,15 +38,15 @@ jobs:
           fi
 
       - name: Install Dependencies
-        if: env.is_fork == 'false' || github.event_name == 'pull_request'
+        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
         run: yarn install
 
       - name: Run Build
-        if: env.is_fork == 'false' || github.event_name == 'pull_request'
+        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
         run: yarn build
 
       - name: Run Step with Secret
-        if: env.is_fork == 'false' || github.event_name == 'pull_request'
+        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
         env:
           SECRET_VAR: ${{ secrets.SECRET_VAR }}
         run: echo "Using secret $SECRET_VAR"
