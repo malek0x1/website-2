@@ -3,7 +3,7 @@ name: Build Check
 on:
   push:
     branches: ["main"]
-  pull_request_target:
+  pull_request:
     branches: ["main"]
 
 jobs:
@@ -38,15 +38,15 @@ jobs:
           fi
 
       - name: Install Dependencies
-        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
+        if: env.is_fork == 'false' || github.event_name == 'pull_request'
         run: yarn install
 
       - name: Run Build
-        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
+        if: env.is_fork == 'false' || github.event_name == 'pull_request'
         run: yarn build
 
       - name: Run Step with Secret
-        if: env.is_fork == 'false' || github.event_name == 'pull_request_target'
+        if: env.is_fork == 'false'
         env:
           SECRET_VAR: ${{ secrets.SECRET_VAR }}
         run: echo "Using secret $SECRET_VAR"
